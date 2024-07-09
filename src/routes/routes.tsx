@@ -4,8 +4,7 @@ import About from "../pages/About";
 import Login from "../pages/Login";
 import Contract from "../pages/Contract";
 import Register from "../pages/Register";
-import AdminDashboard from "../pages/Admin/AdminDashboard";
-import StudentCreate from "../pages/Admin/StudentCreate";
+import { adminRoutes } from "./Admin.Routes";
 
 const router = createBrowserRouter([
   {
@@ -25,20 +24,7 @@ const router = createBrowserRouter([
   {
     path: "/admin",
     element: <App />,
-    children: [
-      {
-        index: true,
-        element: <AdminDashboard />,
-      },
-      {
-        path: "dashboard",
-        element: <AdminDashboard />,
-      },
-      {
-        path: "studentCreate",
-        element: <StudentCreate />,
-      },
-    ],
+    children: adminRoutes,
   },
   {
     path: "login",
